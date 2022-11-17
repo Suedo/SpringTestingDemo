@@ -1,0 +1,11 @@
+firstname,lastName,dob,country,bankId,depositValue
+Tom,Hardy,2021-01-01,USA,1,1
+Lewis,Hamilton,2022-01-01,UK,2,500
+Kid,Baby,1991-01-01,India,1,5
+Kid,,1991-01-01,India,1,5
+Kid,'',1991-01-01,India,1,5
+,Baby,1991-01-01,India,1,5
+'',Baby,1991-01-01,India,1,5
+Kid,Baby,,India,1,5
+Kid,Baby,1991-01-01,,1,5
+Kid,Baby,1991-01-01,India,0,5
