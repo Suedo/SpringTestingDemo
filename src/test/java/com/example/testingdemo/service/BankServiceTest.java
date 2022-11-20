@@ -1,7 +1,7 @@
 package com.example.testingdemo.service;
 
 import com.example.testingdemo.common.BankInternalException;
-import com.example.testingdemo.common.Types;
+import com.example.testingdemo.Types.BankFlow;
 import com.example.testingdemo.utils.DepositAggregator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -26,7 +26,7 @@ class BankServiceTest {
             "Tom,Hardy,1990-01-01,USA,1,200",
             "Lewis,Hamilton,1991-01-01,UK,2,100"
     })
-    void makeDeposit_happy(@AggregateWith(DepositAggregator.class) Types.DepositRequest depositRequest) {
+    void makeDeposit_happy(@AggregateWith(DepositAggregator.class) BankFlow.DepositRequest depositRequest) {
         String status = bankService.makeDeposit(depositRequest);
         assertEquals("Created deposit successfully", status);
     }
@@ -42,7 +42,7 @@ class BankServiceTest {
             "Lewis,Hamilton,2022-01-01,UK,2,500",
             "Kid,Baby,1991-01-01,India,1,5"
     })
-    void makeDeposit_error(@AggregateWith(DepositAggregator.class) Types.DepositRequest depositRequest) {
+    void makeDeposit_error(@AggregateWith(DepositAggregator.class) BankFlow.DepositRequest depositRequest) {
 
         BankInternalException ex = assertThrows(BankInternalException.class,
                                                 () -> bankService.makeDeposit(depositRequest));

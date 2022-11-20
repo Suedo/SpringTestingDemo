@@ -1,6 +1,7 @@
 package com.example.testingdemo.service;
 
-import com.example.testingdemo.common.Types;
+import com.example.testingdemo.Types.BankFlow.*;
+import com.example.testingdemo.Types.Common.*;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -28,17 +29,17 @@ public class ValidationService {
         return true;
     }
 
-    public List<Types.Errors> getErrors(ConstraintViolationException ex) {
-        List<Types.Errors> errors = ex.getConstraintViolations().stream().map(
-                violation -> new Types.Errors(violation.getPropertyPath().toString(),
-                                              violation.getMessage())
+    public List<Errors> getErrors(ConstraintViolationException ex) {
+        List<Errors> errors = ex.getConstraintViolations().stream().map(
+                violation -> new Errors(violation.getPropertyPath().toString(),
+                                                 violation.getMessage())
         ).toList();
         return errors;
     }
 
-    public List<Types.Errors> getErrors(MethodArgumentNotValidException ex) {
+    public List<Errors> getErrors(MethodArgumentNotValidException ex) {
         List<FieldError> fieldErrors = ex.getBindingResult().getFieldErrors();
-        List<Types.Errors> errors = fieldErrors.stream().map(fieldError -> new Types.Errors(
+        List<Errors> errors = fieldErrors.stream().map(fieldError -> new Errors(
                 fieldError.getField(),
                 fieldError.getDefaultMessage())).toList();
         return errors;

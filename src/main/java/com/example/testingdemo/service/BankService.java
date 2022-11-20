@@ -1,10 +1,10 @@
 package com.example.testingdemo.service;
 
 import com.example.testingdemo.common.BankInternalException;
-import com.example.testingdemo.common.Types.Deposit;
-import com.example.testingdemo.common.Types.DepositRequest;
-import com.example.testingdemo.common.Types.Errors;
-import com.example.testingdemo.common.Types.Person;
+import com.example.testingdemo.Types.BankFlow.Deposit;
+import com.example.testingdemo.Types.BankFlow.DepositRequest;
+import com.example.testingdemo.Types.Common.Errors;
+import com.example.testingdemo.Types.BankFlow.Person;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolationException;
