@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: testingdemos
+  cloud:
+    vault:
+      enabled: true  # make this false when not needing vault for other experiments
+      token: ${VAULT_DEV_ROOT_TOKEN_ID}
+      scheme: http
+      kv:
+        enabled: true
+  config:
+    import: optional:vault://
+
+#  spring.cloud.vault.enabled use to enable/disable vault.
+#  When vault is disabled config locations provided as optional will be skipped during application startup.
