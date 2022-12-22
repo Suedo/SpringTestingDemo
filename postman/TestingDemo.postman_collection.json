@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "98ab97ec-cf05-4ecc-b00e-f03ec05d8d55",
+		"name": "TestingDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "systemdate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bic\": \"{{bic}}\",\r\n    \"currency\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{backend_url}}/api/v1/{{id}}/systemDate",
+					"host": [
+						"{{backend_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"{{id}}",
+						"systemDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"Somjit\",\r\n    \"lastName\": \"Nag\",\r\n    \"dob\": \"1991-01-01\",\r\n    \"country\": \"India\",\r\n    \"bankId\": 1,\r\n    \"depositValue\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{backend_url}}/api/v1/deposit",
+					"host": [
+						"{{backend_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "systemdate_happy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bic\": \"{{bic}}\",\r\n    \"currency\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{backend_url}}/api/v1/{{id}}/systemDate",
+					"host": [
+						"{{backend_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"{{id}}",
+						"systemDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "systemdate_error",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bic\": \"{{bic}}\",\r\n    \"currency\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{backend_url}}/api/v1/{{id}}/systemDate",
+					"host": [
+						"{{backend_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"{{id}}",
+						"systemDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit_happy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Deposit should be created\", () => {\r",
+							"    //parse the response JSON and test three properties\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.details).to.eql('Created deposit successfully');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"{{firstname}}\",\r\n    \"lastName\": \"{{lastName}}\",\r\n    \"dob\": \"{{dob}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"bankId\": {{bankId}},\r\n    \"depositValue\": {{depositValue}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{backend_url}}/api/v1/deposit",
+					"host": [
+						"{{backend_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit_error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Deposit should fail with errors\", () => {\r",
+							"    //parse the response JSON and test three properties\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log(getRequestBodyString(pm))\r",
+							"    pm.expect(responseJson.errorCount).to.be.greaterThan(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Error List should have as many errors as denoted in error count\", () => {\r",
+							"    //parse the response JSON and test three properties\r",
+							"    const responseJson = pm.response.json();\r",
+							"    const count = responseJson.errorCount;\r",
+							"    console.info(`error count: ${count}`);\r",
+							"    pm.expect(responseJson.errorList.length).to.equal(count);\r",
+							"});\r",
+							"\r",
+							"function getRequestBodyString(pm) {\r",
+							"    return JSON.stringify(JSON.parse(pm.request.body))\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"{{firstname}}\",\r\n    \"lastName\": \"{{lastName}}\",\r\n    \"dob\": \"{{dob}}\",\r\n    \"country\": \"{{country}}\",\r\n    \"bankId\": {{bankId}},\r\n    \"depositValue\": {{depositValue}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{backend_url}}/api/v1/deposit",
+					"host": [
+						"{{backend_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

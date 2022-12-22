@@ -1,0 +1,99 @@
+{
+	"id": "804f60ae-be72-4aef-8b90-f90f1ede9cb8",
+	"name": "TestingDemo",
+	"timestamp": "2022-11-13T15:06:04.690Z",
+	"collection_id": "0-98ab97ec-cf05-4ecc-b00e-f03ec05d8d55",
+	"folder_id": 0,
+	"environment_id": "0e2316a7-fe7a-4a0e-bb56-d152f97328bb",
+	"totalPass": 20,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "62c50843-649a-4ac3-80d7-b39fdbb73721",
+			"name": "Deposit_error",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Deposit should fail with errors": true,
+				"Error List should have as many errors as denoted in error count": true
+			},
+			"testPassFailCounts": {
+				"Deposit should fail with errors": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Error List should have as many errors as denoted in error count": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				19,
+				14,
+				16,
+				8,
+				14,
+				9,
+				15,
+				9,
+				8,
+				8
+			],
+			"allTests": [
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				},
+				{
+					"Deposit should fail with errors": true,
+					"Error List should have as many errors as denoted in error count": true
+				}
+			]
+		}
+	],
+	"count": 10,
+	"totalTime": 120,
+	"collection": {
+		"requests": [
+			{
+				"id": "62c50843-649a-4ac3-80d7-b39fdbb73721",
+				"method": "POST"
+			}
+		]
+	}
+}

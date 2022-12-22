@@ -7,7 +7,7 @@ import com.example.testingdemo.Types.Common.Errors;
 import com.example.testingdemo.Types.BankFlow.Person;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ConstraintViolationException;
+import jakarta.validation.ConstraintViolationException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;

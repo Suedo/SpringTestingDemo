@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
-import javax.annotation.PreDestroy;
-import javax.validation.*;
+import jakarta.annotation.PreDestroy;
+import jakarta.validation.*;
 import java.util.List;
 import java.util.Set;
 

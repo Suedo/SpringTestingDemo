@@ -4,7 +4,7 @@ import com.example.testingdemo.common.LoginException;
 import com.example.testingdemo.Types.UserFlow.*;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ConstraintViolationException;
+import jakarta.validation.ConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

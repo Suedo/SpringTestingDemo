@@ -1,0 +1,26 @@
+[
+  {
+    "firstname": "Tom",
+    "lastName": "Hardy",
+    "dob": "2021-01-01",
+    "country": "USA",
+    "bankId": 1,
+    "depositValue": 1
+  },
+  {
+    "firstname": "Lewis",
+    "lastName": "Hamilton",
+    "dob": "2022-01-01",
+    "country": "UK",
+    "bankId": 2,
+    "depositValue": 500
+  },
+  {
+    "firstname": "Kid",
+    "lastName": "Baby",
+    "dob": "1991-01-01",
+    "country": "India",
+    "bankId": 1,
+    "depositValue": 5
+  }
+]
